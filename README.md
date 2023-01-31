@@ -1,3 +1,3 @@
 * Data Structures and Algorithm
- ⭐️ Linked list
+* ⭐️ Linked list
      singly linked list
