@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -16,9 +17,17 @@ struct node
 };
 typedef struct node SN;
 
+
+
 int main(void)
+{  
+    createNode();
+    return 0;
+}
+
+void createNode ()
 {
-    //allocating the link
+     //allocating the link
     SN *head,*newnode,*temp;
     int choice = 1;
     //set head to 0 since no node exits
@@ -45,6 +54,7 @@ int main(void)
         printf("Enter 1 to continue or 0 to exit\n");
         scanf("%d",&choice);
     }
+    printf("Enter data : \n");
     //displaying data
     temp = head;
     while (temp != 0)
@@ -52,7 +62,4 @@ int main(void)
         printf("list : %d\n",temp -> data);
         temp = temp ->next;
     }
-    
-    
-    return 0;
 }
