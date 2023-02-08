@@ -18,19 +18,26 @@ struct node
 };
 typedef struct node SN;
 
+// SN *head,*newnode,*temp;
+
 
 
 int main(void)
 {  
+    
+    // char ans[] = "yes";
     createNode();
+
+    insertBegin();
+   
     return 0;
 }
 
 void createNode ()
 {
     SN *head,*newnode,*temp;
-    int choice = 1;
     head = 0;
+    int choice = 1;
     while (choice)
     {
         newnode = (SN*)malloc(sizeof(SN));
@@ -47,14 +54,47 @@ void createNode ()
             temp ->next = newnode;
             temp = newnode;
         }
-        printf("Enter 1 to continue or 0 to exit\n");
+        printf("Enter 1 to continue or 0 to exit : ");
         scanf("%d",&choice);
     }
-    printf("Enter data : \n");
+    // printf("Enter data : \n");
     temp = head;
     while (temp != 0)
     {
         printf("list : %d\n",temp -> data);
         temp = temp ->next;
     }
+}
+
+void insertBegin()
+{
+
+    SN *head,*newnode,*temp;
+    int choice;
+    newnode =(SN *) malloc(sizeof(SN));
+
+    printf("Do you want to insert at beginning, if Yes press 1 : ");
+    scanf("%d",&choice);
+
+    if(choice == 1)
+    {
+        printf("Enter data : \n");
+        scanf("%d",&newnode ->data);
+
+        newnode->next = head;
+        head = newnode;
+
+        temp = head;
+        while (temp != 0)
+        {
+            printf("list : %d\n",temp -> data);
+            temp = temp ->next;
+        }
+    }else
+    {
+        printf("quit ...");
+        
+    }
+
+
 }
