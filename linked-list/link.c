@@ -27,8 +27,8 @@ int main(void)
     
     // char ans[] = "yes";
     createNode();
-
     insertBegin();
+    insertEnd();
    
     return 0;
 }
@@ -56,6 +56,7 @@ void createNode ()
         }
         printf("Enter 1 to continue or 0 to exit : ");
         scanf("%d",&choice);
+        break;
     }
     // printf("Enter data : \n");
     temp = head;
@@ -81,7 +82,7 @@ void insertBegin()
         printf("Enter data : \n");
         scanf("%d",&newnode ->data);
 
-        newnode->next = head;
+        newnode->next = head; //points to the first node
         head = newnode;
 
         temp = head;
@@ -95,6 +96,45 @@ void insertBegin()
         printf("quit ...");
         
     }
+
+
+}
+void insertEnd()
+{
+    SN *head,*newnode,*temp;
+    // int choice;
+    newnode =(SN *) malloc(sizeof(SN));
+    int choice;
+
+
+    printf("\nDo you want to insert at end, if Yes press 1 : ");
+    scanf("%d",&choice);
+
+    if(choice == 1){
+    printf("Enter data : \n");
+        scanf("%d",&newnode -> data);
+        newnode->next = 0; //points to the last node
+
+        //transverse with temp
+        temp = head; // set temp to first element
+
+        while (temp ->next != 0)
+        {
+            temp = temp ->next; //transverse
+        }
+        temp -> next = newnode; 
+            temp = head;
+        while (temp != 0)
+        {
+            printf("list : %d\n",temp -> data);
+            temp = temp ->next;
+        }
+    }else
+    {
+        printf("\nexiting .. ");
+    }
+
+
 
 
 }
