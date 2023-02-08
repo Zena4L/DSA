@@ -123,7 +123,8 @@ void insertEnd()
             temp = temp ->next; //transverse
         }
         temp -> next = newnode; 
-            temp = head;
+        
+        temp = head;
         while (temp != 0)
         {
             printf("list : %d\n",temp -> data);
@@ -133,8 +134,5 @@ void insertEnd()
     {
         printf("\nexiting .. ");
     }
-
-
-
 
 }
