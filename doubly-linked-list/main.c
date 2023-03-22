@@ -215,7 +215,7 @@ void deletion_specified()
 void display()
 {
     SN* ptr;
-    printf("\nPrinting values ...");
+    printf("\nPrinting values ... \n");
     ptr = head;
     while(ptr != NULL)
     {
