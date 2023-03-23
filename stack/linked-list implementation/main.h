@@ -5,6 +5,12 @@
 #include <stdlib.h>
 
 
+typedef struct node{
+    int data;
+    struct node *next;
+} SN;
+
+SN *head;
 
 void push();
 void pop();
